@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Oie, {{ user.username }}!</h1>
+	{% for item in itens %}
+	<div><p><b>{{ item.nome }}</b> : </p></div>
+	<p>{{ item.preco }} as {{ item.data }}</p>
+	{% endfor %}
+{% endblock %}
