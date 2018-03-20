@@ -27,10 +27,10 @@ class RegistrationForm(FlaskForm):
 			raise ValidationError('Esse email ja esta em uso.')		
 
 class GroupForm(FlaskForm):
-	name = StringField('Nome do grupo', validators=[DataRequired()])
+	name_grupo = StringField('Nome do grupo', validators=[DataRequired()])
 	submit = SubmitField('Sign In')
 	
-	def validate_groupname(self, name):
-		grupo = Grupo.query.filter_by(name=name.data).first()
+	def validate_groupname(self, name_grupo):
+		grupo = Grupo.query.filter_by(name_grupo=name_grupo.data).first()
 		if grupo is not None:
 			raise ValidationError('Nome do grupo em uso')

@@ -5,8 +5,8 @@ from app import db
 from app import login
 
 grupos = db.Table('grupos', 
-	db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-	db.Column('grupo_id', db.Integer, db.ForeignKey('grupo.id'), primary_key=True)
+ 	db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+ 	db.Column('grupo_id', db.Integer, db.ForeignKey('grupo.id'), primary_key=True)
 )
 
 class User(UserMixin, db.Model):
@@ -43,5 +43,5 @@ class Item(db.Model):
 
 class Grupo(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
-	name = db.Column(db.String(140))
+	name_grupo = db.Column(db.String(140), index=True)
 	

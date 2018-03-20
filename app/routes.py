@@ -68,7 +68,7 @@ def register():
 def creategroup():
 	form = GroupForm()
 	if form.validate_on_submit():
-		grupo = Grupo(name=name.data)
+		grupo = Grupo(name_grupo=form.name_grupo.data)
 		grupo.membros.append(current_user)
 		db.session.add(grupo)
 		db.session.commit()
